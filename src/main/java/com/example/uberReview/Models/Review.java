@@ -29,28 +29,13 @@ import lombok.Setter;
 @Entity
 @Table(name = "BookingReview")
 @Builder
-@EntityListeners(AuditingEntityListener.class)
-public class Review {
+public class Review extends BaseModel{
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long Id;
-	
 	@Column(nullable = false)
 	private String content;
 	
 	@Column(nullable = false)
 	private double rating;
-	
-	@Column(nullable = false)
-	@Temporal(TemporalType.TIMESTAMP)
-	@CreatedDate
-	private Date createdAt;
-	
-	@Column(nullable = false)
-	@Temporal(TemporalType.TIMESTAMP)
-	@LastModifiedDate
-	private Date updatedAt;
 	
 	@Override
 	public String toString() {
