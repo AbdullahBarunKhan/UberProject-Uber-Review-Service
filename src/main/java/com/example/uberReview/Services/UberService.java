@@ -30,7 +30,7 @@ public class UberService implements CommandLineRunner{
 		
 		List<Review> reviews = reviewrepository.findAll();
 		
-		reviewrepository.deleteById(2L);
+//		reviewrepository.deleteById(2L);
 		
 		for(Review rev : reviews) {
 			System.out.println(rev.getContent());

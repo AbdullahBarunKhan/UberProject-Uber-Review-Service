@@ -11,6 +11,8 @@ import jakarta.persistence.EntityListeners;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -21,6 +23,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
 @Data
 @Getter
 @Setter
@@ -29,6 +32,7 @@ import lombok.Setter;
 @Entity
 @Table(name = "BookingReview")
 @Builder
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Review extends BaseModel{
 
 	@Column(nullable = false)
