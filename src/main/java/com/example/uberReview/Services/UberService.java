@@ -32,8 +32,8 @@ public class UberService implements CommandLineRunner{
 				
 		Booking b = Booking.builder().endTime(new Date()).review(r).bookingstatus(BookingStatus.ASSIGNING_DRIVER).build();
 		
-//		bookingRepository.save(b);
-//		reviewrepository.save(r);
+		bookingRepository.save(b);
+		reviewrepository.save(r);
 		
 //		System.out.println(r);
 		
