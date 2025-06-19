@@ -5,6 +5,7 @@ import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,8 +24,8 @@ public class Driver extends BaseModel{
 
 	private String name;
 	
-	@Column(nullable = false)
-	private String LicenseNumber;
+	@Column(nullable = false, unique = true)
+	private String licenseNumber;
 	
 	@OneToMany(mappedBy = "driver")
 	private List<Booking> booking = new ArrayList<>();
